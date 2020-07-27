@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class AnyBase {
+public class NumberBase {
 
 	// Handles larger numbers
 	public static long[] getDigits(long N, long b) {

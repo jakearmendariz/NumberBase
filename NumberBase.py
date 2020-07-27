@@ -16,6 +16,7 @@ def addSpecialCharacters(translator):# 15 charaters.. 77 overall
 
 def numberBase(translator, number, base):
     power = getOutputLength(number, base)
+    print('power', power)
     result = ''
     while(power > -1):
         digit = math.pow(base, power)
@@ -41,14 +42,17 @@ def highestConstant(number, digit, base):
 
 def getOutputLength(number, base):
     power = 0
-    while(math.pow(base, power) < number):
+    while(math.pow(base, power) <= number):
         power+=1
+    if(power == 0):
+        return 0
     return power-1
 
-translator = []
-createNumberSystem(translator)
-addSpecialCharacters(translator)
-print('max-base size:', len(translator))
-N = input("Enter a number: ")
-B = input("Enter a base: ")
-print(numberBase(translator, int(N), int(B)))
+if __name__ == '__main__':
+    translator = []
+    createNumberSystem(translator)
+    addSpecialCharacters(translator)
+    print('max-base size:', len(translator))
+    N = input("Enter a number: ")
+    B = input("Enter a base: ")
+    print(numberBase(translator, int(N), int(B)))
